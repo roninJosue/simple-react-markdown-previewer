@@ -1,3 +1,9 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: #282c34;
+}
 .App {
   text-align: center;
 }
@@ -18,11 +24,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 3rem;
+  padding: 2rem;
+  justify-content: space-between;
 }
 
 .App-link {
@@ -30,13 +35,53 @@
 }
 
 .section{
-  width: 50%;
+  width: 49%;
 }
 
 #editor{
   width: 100%;
-  min-height: 100vh;
+  height: 90vh;
   resize: none;
+  border: 0;
+  padding: 1rem;
+  outline: none;
+  font-size: 1rem;
+  overflow: -moz-scrollbars-none;
+}
+
+#previewer{
+  height: 90vh;
+  padding: 0 2rem;
+  text-align: left;
+  background: #fff;
+  color: #282c34;
+  overflow-y: scroll;
+}
+#previewer pre{
+  padding: .6rem;
+  background: aliceblue;
+  color: black;
+  text-align: initial;
+  font-size: 1.6rem;
+}
+
+#previewer code {
+  white-space: break-spaces;
+  font-size: 1rem;
+}
+
+#previewer img {
+  width: 90%;
+}
+
+#previewer a img {
+  width: auto;
+}
+
+.toolbar{
+  background-color: orange;
+  text-align: left;
+  padding: .325rem 1rem;
 }
 
 @keyframes App-logo-spin {
