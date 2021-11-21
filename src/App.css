@@ -31,10 +31,6 @@ body {
     height: 100%;
 }
 
-/*.section-active__1,
-.section-active__2{
-    transition: all ease-in-out 50ms;
-}*/
 
 .section-active__1:first-child {
     width: 100%;
