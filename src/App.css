@@ -1,94 +1,134 @@
-*{
-  box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
-body{
-  background-color: #282c34;
+
+body {
+    background-color: #282c34;
 }
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    text-align: center;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 2rem;
-  justify-content: space-between;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    padding: .625rem 2rem;
+    justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.section {
+    display: flex;
+    width: 49%;
+    border: 1px solid #444c56;
+    background-color: #2d333b;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
 }
 
-.section{
-  width: 49%;
+/*.section-active__1,
+.section-active__2{
+    transition: all ease-in-out 50ms;
+}*/
+
+.section-active__1:first-child {
+    width: 100%;
 }
 
-#editor{
-  width: 100%;
-  height: 90vh;
-  resize: none;
-  border: 0;
-  padding: 1rem;
-  outline: none;
-  font-size: 1rem;
-  overflow: -moz-scrollbars-none;
+.section-active__1:last-child {
+    width: 0;
+    display: none;
 }
 
-#previewer{
-  height: 90vh;
-  padding: 0 2rem;
-  text-align: left;
-  background: #fff;
-  color: #282c34;
-  overflow-y: scroll;
+.section-active__2:last-child {
+    width: 100%;
 }
-#previewer pre{
-  padding: .6rem;
-  background: aliceblue;
-  color: black;
-  text-align: initial;
-  font-size: 1.6rem;
+
+.section-active__2:first-child {
+    width: 0;
+    display: none;
+}
+
+#editor {
+    width: 100%;
+    height: 90vh;
+    resize: none;
+    border: 0;
+    padding: 1rem;
+    outline: none;
+    font-size: 1rem;
+    overflow: -moz-scrollbars-none;
+}
+
+#editor, #previewer {
+    color: #adbac7;
+    background-color: #2d333b;
+}
+
+#previewer {
+    height: 90vh;
+    padding: 0 1rem;
+    text-align: left;
+    overflow-y: scroll;
+    word-break: break-word;
+}
+
+#previewer pre {
+    padding: .6rem;
+    background: aliceblue;
+    color: black;
+    text-align: initial;
+    font-size: 1.6rem;
 }
 
 #previewer code {
-  white-space: break-spaces;
-  font-size: 1rem;
+    white-space: break-spaces;
+    font-size: 1rem;
 }
 
 #previewer img {
-  width: 90%;
+    width: 90%;
 }
 
 #previewer a img {
-  width: auto;
+    width: auto;
 }
 
-.toolbar{
-  background-color: orange;
-  text-align: left;
-  padding: .325rem 1rem;
+#previewer p {
+    width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.toolbar {
+    background-color: #2d333b;
+    text-align: left;
+    padding: .325rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #444c56;
+    color: #adbac7;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.toolbar-icons {
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-icons-text {
+    margin-left: .625rem;
+}
+
+.toolbar-action {
+    cursor: pointer;
+    transition: all ease-in-out .5ms;
+}
+
+.toolbar-action:hover {
+    color: #fff;
 }

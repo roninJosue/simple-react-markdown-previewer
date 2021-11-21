@@ -7,6 +7,7 @@ import 'prismjs/themes/prism.css'
 import Editor from "./components/Editor";
 import Previewer from "./components/Previewer";
 import ToolBar from "./components/ToolBar";
+import {FaPen, FaMarkdown} from "react-icons/fa";
 
 marked.setOptions({
   breaks: true,
@@ -29,6 +30,7 @@ const placeHolder = `# Hello World!!!
 function App() {
   const [text, setText] = useState(placeHolder)
   const [markedText, setMarkedText] = useState('')
+  const [sectionActive, setSectionActive] = useState('')
 
   const handleChange = ({target: {value}}) => {
     setText(value)
@@ -41,14 +43,23 @@ function App() {
   return (
     <div className="App">
       <main className="App-header">
-        <Section>
-          <ToolBar/>
+        <Section active={sectionActive}>
+          <ToolBar
+            text='Editor'
+            icon={<FaPen size={'1.2rem'} />}
+            setSectionActive={setSectionActive}
+          />
           <Editor
             handleChange={handleChange}
             text={text} />
         </Section>
-        <Section>
-          <ToolBar />
+        <Section active={sectionActive}>
+          <ToolBar
+            active = 'section-active__2'
+            text='Previewer'
+            icon={<FaMarkdown size={'1.2rem'} />}
+            setSectionActive={setSectionActive}
+          />
           <Previewer markedText={markedText} />
         </Section>
       </main>
